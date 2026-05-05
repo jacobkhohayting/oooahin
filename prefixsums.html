@@ -40,7 +40,26 @@
         <a href="index.html">Cool Math Problems</a> | 
         <a href="prefixsums.html">Prefix Sums</a>
     </nav>
-    <h1>aaa</h1>
+    <h1>Prefix Sums</h1>
+    <p>Consider an array $\mathcal{A} = [a_1,a_2\ldots, a_n]$ of numbers. 
+
+    Let $\mathcal{P}$ denote the <b>Prefix Sum Array</b> of $\mathcal{A}$. Then,
+    \begin{align*}
+        p_i = a_1+a_2+\cdots+a_i, \ \ \ \forall \ 0 \leq i \leq n, \ i \in \mathbb{Z}.
+    \end{align*}</p>
+
+    <h2>Prefix Sums At Work</h2>
+    <p>Consider the array $\mathcal{A} = [4,1,6,7,41,67]$.   
+    <ol>
+    <li>$p_0 = 0 = 0$.</li>
+    <li>$p_1 = a_1 = 4$.</li>
+    <li>$p_2 = a_1 + a_2 = 4+1 = 5$.</li>
+    <li>$p_3 = a_1 + a_2 + a_3 = 4+1+6 = 11$.</li>
+    <li>$p_4 = a_1 +a_2 + a_3 + a_4 = 4+1+6+7 = 18$.</li>
+    <li>$p_5 = a_1 +a_2+a_3+a_4 + a_5 = 4+1+6+7+41 = 59$.</li>
+    <li>$p_6 = a_1 +a_2+a_3+a_4 + a_5 + a_6 = 4+1+6+7+41+67 = 126$.</li>
+    </ol>
+    Hence, $\mathcal{P} = [0, 4,5,11,18,59,126]$. </p>
 </body>
     
 </html>
