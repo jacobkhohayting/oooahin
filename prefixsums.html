@@ -102,6 +102,54 @@
     Now, $[p_1,p_2,\ldots, p_{9}, p_{10}]$ modulo $10$ is some permutation of $0$ to $9$ with $p_{10} = 0$. There are $9! = \boxed{362880}$ total strings. 
     It is clear that once you fix the prefix sums. Then, the values of $a_k$ follow as $p_k - p_{k-1} = 7^{9-k} \cdot a_k$.
     </p>
+
+    <h2>Example #3 (AtCoder??)</h2>
+    <p> 
+        <blockquote> 
+            $1 \leq N\leq 10^5$ integers, $1 \leq A_1, A_2,\ldots, A_N\leq 10^9$, are written on a blackboard. 
+            Daniel chooses one of them to replace with an integer of his choice between $1$ and $10^9$ 
+            (inclusive), possibly the same as the integer originally written. Compute the maximum greatest 
+            common divisor of the $N$ integers on the blackboard after his move.
+        </blockquote>
+    <b>Solution.</b> Define $p_i = \gcd(A_1, \ldots, A_i)$ and $s_i = \gcd(A_i, \ldots, A_n)$.
+    Suppose we update the $i$th number to be $B$. Then, the greatest common divisor is
+    \begin{align*}
+        \gcd(p_{i-1}, B, s_{i+1}) \leq \gcd(p_{i-1}, s_{i+1}).
+    \end{align*}
+    Equality holds iff $\gcd(p_{i-1}, s_{i+1}) \mid B$. This is clearly attainable.
+    It suffices to determine the maximum value of $\gcd(p_{i-1}, s_{i+1})$.
+    </p>
+
+    <p><b>Code.</b></p>
+    <p>
+    <pre> <code class="language-cpp">
+    #include &lt;bits/stdc++.h&gt;
+    using namespace std;
+    
+    int main() {
+        int n; cin &gt;&gt; n;
+        vector &lt;int&gt; a(n);
+        for (int i = 0; i &lt; n; i++) {
+            cin &gt;&gt; a[i]; 
+        }
+    
+        vector &lt;int&gt; p(n + 1), s(n + 1);
+        for (int i = 0; i &lt; n; i++) {
+            p[i + 1] = __gcd(p[i], a[i]); 
+        }
+        for (int i = n - 1; i &gt;= 0; i--) {
+            s[i] = __gcd(s[i + 1], a[i]); 
+        }
+    
+        int ans = 0;
+        for (int i = 0; i &lt; n; i++) { 
+            ans = max(ans, __gcd(p[i], s[i + 1])); 
+        }
+    
+        cout &lt;&lt; ans &lt;&lt; endl;
+    }
+    </code></pre>
+    </p>
 </body>
     
 </html>
