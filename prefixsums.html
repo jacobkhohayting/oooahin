@@ -61,10 +61,10 @@
     </ol>
     Hence, $\mathcal{P} = [0, 4,5,11,18,59,126]$. </p>
 
-    <h2>Example #1</h2>
+    <h2>Example #1 (Classical)</h2>
     <p> 
         <blockquote> 
-        (Classical) Daniel has a magical jar of infinitely many cards labeled `1' to `9'. 
+        Daniel has a magical jar of infinitely many cards labeled `1' to `9'. 
         Every second, he randomly selects a card from the jar until he has ten cards. 
         After a card is drawn, Daniel computes the sum of all cards drawn. Given that 
         the sum is never divisible by $3$, compute the number of possible card drawings. 
@@ -75,15 +75,32 @@
     some restrictions. Let us look at an example to learn more.
     Given an arbitrary fixed $\mathcal{P}$, we can compute $\mathcal{A}$:
     \begin{align*}
-    \mathcal{P}&: [2,0,2,3,2,0,2,2] \\
-    \implies \mathcal{A}&: [2, 0-2, 2-0, 3-2, 2-3, 0-2, 2-0, 2-2] \\
-    \implies \mathcal{A}&: [2, 1, 2, 1, 2, 1, 2, 0]
+    \mathcal{P}: [2, \ 0, \ 2,\ 3, \ 2,\ 0,\ 2, \ 2] \quad &\rightarrow \quad \mathcal{A}: [2,\ 0-2, \ 2-0, \ 3-2, \ 2-3, \ 0-2, \ 2-0, \ 2-2] \\
+    &\rightarrow \quad \mathcal{A}: [2, 1, 2, 1, 2, 1, 2, 0]
     \end{align*}
     The key here is that $\mathcal{P}$ can never have an element $0$. 
     Otherwise, the sum of all cards drawn is $0 \pmod 3$, a contradiction.
     So, each digit has $2$ possible choices $\implies$ $2^{10}$ prefix sum arrays.
     We shrinked the cards $\#$'s earlier. Accounting, we multiply 
-    each digit by $3$. The answer is $6^{10} = \boxed{60466176}$.
+    each digit by $3$. The answer is $6^{10} = \boxed{60466176}$ total card drawings.
+    </p>
+
+    <h2>Example #2 (2022 AMAMC #25)</h2>
+    <p> 
+        <blockquote> 
+        Call a $9$-digit string $\overline{a_1\dots a_9}$ $(0 \leq a_i \leq 9)$ tasty if
+        \[7^{j-i}a_i+7^{j-i-1}a_{i+1}+\cdots+7a_{j-1}+a_j\] is not divisible by $10$ for 
+        all integers $i$ and $j$ with $1\le i\le j\le 9$. Find the number of tasty strings.
+        </blockquote>
+    <b>Solution.</b> Denote by $p_k = 7^{9-k} \cdot a_k + 7^{8-k} \cdot a_{k+1} + \cdots + 7^0 \cdot a_9$ for 
+    $1 \leq k \leq 9$ and $k \in \mathbb{Z}$ and $p_{10} = 0$. For some $1 \leq i \lt j \leq 10$, if $p_i \equiv p_j \pmod {10}$, then 
+    \begin{align*}
+        p_i-p_j &= 7^{9-i} \cdot a_i + 7^{8-i}\cdot a_{i+1}+\cdots+7^{9-(j-1)}\cdot a_{j-1} \\
+        &= 7^{10-j} \cdot \left(7^{(j-1)-i} \cdot a_i + 7^{(j-1)-i-1}\cdot a_{i+1}+\cdots+ a_{j-1}\right) \\
+    \end{align*}
+    Hence, if $p_i \equiv p_j$, then there exists $i$ and $j$ such that the sum is divisible by $10$, a contradiction.
+    Now, $[p_1,p_2,\ldots, p_{9}, p_{10}]$ modulo $10$ is some permutation of $0$ to $9$ with $p_{10} = 0$. There are $9! = \boxed{362880}$ total strings. 
+    It is clear that once you fix the prefix sums. Then, the values of $a_k$ follow as $p_k - p_{k-1} = 7^{9-k} \cdot a_k$.
     </p>
 </body>
     
