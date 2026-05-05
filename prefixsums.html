@@ -60,6 +60,31 @@
     <li>$p_6 = a_1 +a_2+a_3+a_4 + a_5 + a_6 = 4+1+6+7+41+67 = 126$.</li>
     </ol>
     Hence, $\mathcal{P} = [0, 4,5,11,18,59,126]$. </p>
+
+    <h2>Example #1</h2>
+    <p> 
+        <blockquote> 
+        (Classical) Daniel has a magical jar of infinitely many cards labeled `1' to `9'. 
+        Every second, he randomly selects a card from the jar until he has ten cards. 
+        After a card is drawn, Daniel computes the sum of all cards drawn. Given that 
+        the sum is never divisible by $3$, compute the number of possible card drawings. 
+        </blockquote>
+    <b>Solution.</b> Suppose we only have cards of elements of $\mathbb{F}_3$ (i.e. 0, 1, 2). 
+    Denote the $i$th prefix sum as the sum of the first $i$ integers taken modulo $3$.
+    Once we fix $\mathcal{P}$, then all cards are fixed. There must be 
+    some restrictions. Let us look at an example to learn more.
+    Given an arbitrary fixed $\mathcal{P}$, we can compute $\mathcal{A}$:
+    \begin{align*}
+    \mathcal{P}&: [2,0,2,3,2,0,2,2] \\
+    \implies \mathcal{A}&: [2, 0-2, 2-0, 3-2, 2-3, 0-2, 2-0, 2-2] \\
+    \implies \mathcal{A}&: [2, 1, 2, 1, 2, 1, 2, 0]
+    \end{align*}
+    The key here is that $\mathcal{P}$ can never have an element $0$. 
+    Otherwise, the sum of all cards drawn is $0 \pmod 3$, a contradiction.
+    So, each digit has $2$ possible choices $\implies$ $2^{10}$ prefix sum arrays.
+    We shrinked the cards $\#$'s earlier. Accounting, we multiply 
+    each digit by $3$. The answer is $6^{10} = \boxed{60466176}$.
+    </p>
 </body>
     
 </html>
