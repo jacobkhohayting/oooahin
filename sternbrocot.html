@@ -5,10 +5,10 @@
     <title>Stern Brocot Trees</title>
     <script>
         window.MathJax = {
-          tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            displayMath: [['$$', '$$'], ['\\[', '\\]']]
-          }
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
         };
     </script>
     
@@ -51,7 +51,7 @@
     <h1>Stern Brocot Tree</h1>
     <p>
       Consider the function $f: \mathbb{N} \to \mathbb{Q}^{+}$ defined inductively by
-      \[ f(1) = \dfrac{1}{1} \quad \text{and} \quad f(n+1) = \dfrac{1}{\lfloor f(n)\rfloor +1 - \{f(n)\}} \quad(n \geq 1).\]
+      $$ f(1) = \frac{1}{1} \quad \text{and} \quad f(n+1) = \frac{1}{\lfloor f(n)\rfloor +1 - \{f(n)\}} \quad(n \geq 1).$$
       Here $\lfloor n \rfloor$ is the greatest integer in $n$ and $\{n\}$ is the fractional part of $n$. 
     </p>
 
@@ -60,11 +60,9 @@
     </p>
       
     <p>
-      Consider the infinite binary tree $T$ with root $\tfrac{1}{1}$. 
-      From each node $\tfrac{p}{q}$, the left child is $\tfrac{p+q}{q}$ 
-      while the right child is $\tfrac{p}{q+p}$. In particular, we have $t(1) = \tfrac{1}{1}$ (the root).
-        For all $n \geq 1$, if $t(n) = \tfrac{p}{q}$ where $p,q \in \mathbb{N}$ and $\gcd(p,q)=1$, 
-        we recursively define $t(2n) = \tfrac{p}{q+p}$  and $t(2n+1) = \tfrac{p+q}{q}$.
+      Consider the infinite binary tree $T$ with root $\frac{1}{1}$. 
+      From each node $\frac{p}{q}$, the left child is $\frac{p+q}{q}$ 
+      while the right child is $\frac{p}{q+p}$.
     </p>
 
     <p>
@@ -82,54 +80,65 @@
           draw((-2.5,-9.45) -- (-5,-6.45) -- (-7.5,-9.45));
           draw((-12.5,-9.45) -- (-15,-6.45) -- (-17.5,-9.45));
           
-          label(scale(2) * "$\tfrac{1}{1}$", (0,0-.8)); 
-          label(scale(1.1) * "$t(1)$", (0,2.3-.3)); 
           filldraw(circle((0,-.95), 2.1), green * .3 + white * .7);
+          label(scale(2) * "$\\frac{1}{1}$", (0,0-.8)); 
+          label(scale(1.1) * "$t(1)$", (0,2.3-.3)); 
           
-          label(scale(1.4) * "$\tfrac{1}{2}$", (10,-3-.5));
-          label(scale(.9) * "$t(2)$", (10,-1.2-.15)); 
           filldraw(circle((10,-3.6), 1.5), red * .3 + white * .7);
-          label(scale(1.4) * "$\tfrac{2}{1}$", (-10,-3-.5));
-          label(scale(.9) * "$t(3)$", (-10,-1.2-.15)); 
+          label(scale(1.4) * "$\\frac{1}{2}$", (10,-3-.5));
+          label(scale(.9) * "$t(2)$", (10,-1.2-.15)); 
+          
           filldraw(circle((-10,-3.6), 1.5), red * .3 + white * .7);
+          label(scale(1.4) * "$\\frac{2}{1}$", (-10,-3-.5));
+          label(scale(.9) * "$t(3)$", (-10,-1.2-.15)); 
           
-          label(scale(1.1) * "$\tfrac{1}{3}$", (15,-6-.4)); 
-          label(scale(.75) * "$t(4)$", (15,-4.5-.15)); 
           filldraw(circle((-15,-6.45), 1.2), blue * .3 + white * .7);
-          label(scale(1.1) * "$\tfrac{3}{2}$", (5,-6-.4)); 
-          label(scale(.75) * "$t(5)$", (5,-4.5-.15)); 
-          filldraw(circle((-5,-6.45), 1.2), blue * .3 + white * .7);
-          label(scale(1.1) * "$\tfrac{2}{3}$", (-5,-6-.4)); 
-          label(scale(.75) * "$t(6)$", (-5,-4.5-.15)); 
-          filldraw(circle((5,-6.45), 1.2), blue * .3 + white * .7);
-          label(scale(1.1) * "$\tfrac{3}{1}$", (-15,-6-.4)); 
-          label(scale(.75) * "$t(7)$", (-15,-4.5-.15)); 
-          filldraw(circle((15,-6.45), 1.2), blue * .3 + white * .7);
+          label(scale(1.1) * "$\\frac{1}{3}$", (15,-6-.4)); 
+          label(scale(.75) * "$t(4)$", (15,-4.5-.15)); 
           
-          label(scale(1.1) * "$\tfrac{1}{4}$", (17.5,-9-.3)); 
-          label(scale(.68) * "$t(8)$", (17.5,-7.5-.3)); 
+          filldraw(circle((-5,-6.45), 1.2), blue * .3 + white * .7);
+          label(scale(1.1) * "$\\frac{3}{2}$", (5,-6-.4)); 
+          label(scale(.75) * "$t(5)$", (5,-4.5-.15)); 
+          
+          filldraw(circle((5,-6.45), 1.2), blue * .3 + white * .7);
+          label(scale(1.1) * "$\\frac{2}{3}$", (-5,-6-.4)); 
+          label(scale(.75) * "$t(6)$", (-5,-4.5-.15)); 
+          
+          filldraw(circle((15,-6.45), 1.2), blue * .3 + white * .7);
+          label(scale(1.1) * "$\\frac{3}{1}$", (-15,-6-.4)); 
+          label(scale(.75) * "$t(7)$", (-15,-4.5-.15)); 
+          
           filldraw(circle((17.5,-9.45), 1.15), yellow * .3 + white * .7);
-          label(scale(1.1) * "$\tfrac{4}{3}$", (12.5,-9-.3)); 
-          label(scale(.68) * "$t(9)$", (12.5,-7.5-.3)); 
+          label(scale(1.1) * "$\\frac{1}{4}$", (17.5,-9-.3)); 
+          label(scale(.68) * "$t(8)$", (17.5,-7.5-.3)); 
+          
           filldraw(circle((12.5,-9.45), 1.15), yellow * .3 + white * .7);
-          label(scale(1.1) * "$\tfrac{3}{5}$", (7.5,-9-.3)); 
-          label(scale(.68) * "$t(10)$", (7.5,-7.5-.3)); 
+          label(scale(1.1) * "$\\frac{4}{3}$", (12.5,-9-.3)); 
+          label(scale(.68) * "$t(9)$", (12.5,-7.5-.3)); 
+          
           filldraw(circle((7.5,-9.45), 1.15), yellow * .3 + white * .7);
-          label(scale(1.1) * "$\tfrac{5}{2}$", (2.5,-9-.3));
-          label(scale(.68) * "$t(11)$", (2.5,-7.5-.3)); 
+          label(scale(1.1) * "$\\frac{3}{5}$", (7.5,-9-.3)); 
+          label(scale(.68) * "$t(10)$", (7.5,-7.5-.3)); 
+          
           filldraw(circle((2.5,-9.45), 1.15), yellow * .3 + white * .7);
-          label(scale(1.1) * "$\tfrac{2}{5}$", (-2.5,-9-.3)); 
-          label(scale(.68) * "$t(12)$", (-2.5,-7.5-.3)); 
+          label(scale(1.1) * "$\\frac{5}{2}$", (2.5,-9-.3));
+          label(scale(.68) * "$t(11)$", (2.5,-7.5-.3)); 
+          
           filldraw(circle((-2.5,-9.45), 1.15), yellow * .3 + white * .7);
-          label(scale(1.1) * "$\tfrac{5}{3}$", (-7.5,-9-.3)); 
-          label(scale(.68) * "$t(13)$", (-7.5,-7.5-.3)); 
+          label(scale(1.1) * "$\\frac{2}{5}$", (-2.5,-9-.3)); 
+          label(scale(.68) * "$t(12)$", (-2.5,-7.5-.3)); 
+          
           filldraw(circle((-7.5,-9.45), 1.15), yellow * .3 + white * .7);
-          label(scale(1.1) * "$\tfrac{3}{4}$", (-12.5,-9-.3)); 
-          label(scale(.68) * "$t(14)$", (-12.5,-7.5-.3)); 
+          label(scale(1.1) * "$\\frac{5}{3}$", (-7.5,-9-.3)); 
+          label(scale(.68) * "$t(13)$", (-7.5,-7.5-.3)); 
+          
           filldraw(circle((-12.5,-9.45), 1.15), yellow * .3 + white * .7);
-          label(scale(1.1) * "$\tfrac{4}{1}$", (-17.5,-9-.3)); 
-          label(scale(.68) * "$t(15)$", (-17.5,-7.5-.3)); 
+          label(scale(1.1) * "$\\frac{3}{4}$", (-12.5,-9-.3)); 
+          label(scale(.68) * "$t(14)$", (-12.5,-7.5-.3)); 
+          
           filldraw(circle((-17.5,-9.45), 1.15), yellow * .3 + white * .7);
+          label(scale(1.1) * "$\\frac{4}{1}$", (-17.5,-9-.3)); 
+          label(scale(.68) * "$t(15)$", (-17.5,-7.5-.3)); 
         </script>
         </div>
     </p>
