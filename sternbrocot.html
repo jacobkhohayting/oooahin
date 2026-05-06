@@ -62,7 +62,9 @@
     <p>
       Consider the infinite binary tree $T$ with root $\tfrac{1}{1}$. 
       From each node $\tfrac{p}{q}$, the left child is $\tfrac{p+q}{q}$ 
-      while the right child is $\tfrac{p}{q+p}$.
+      while the right child is $\tfrac{p}{q+p}$. In particular, we have $t(1) = \tfrac{1}{1}$ (the root).
+        For all $n \geq 1$, if $t(n) = \tfrac{p}{q}$ where $p,q \in \mathbb{N}$ and $\gcd(p,q)=1$, 
+        we recursively define $t(2n) = \tfrac{p}{q+p}$  and $t(2n+1) = \tfrac{p+q}{q}$.
     </p>
 
     <p>
