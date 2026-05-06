@@ -32,6 +32,12 @@
             color: #b2bec3;
             font-size: 0.9rem;
         }
+        
+        .asy-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
     </style>
 </head>
     
@@ -60,69 +66,69 @@
 
     <p>
       To one's surprise, the values of $f$ and $T$ are indeed identical.
-      \begin{center}
-      \begin{asy}
-      size(14cm);
-      
-      draw((-10,-3.6) -- (0,-.95) -- (10,-3.6));
-      draw((-15,-6.45) -- (-10,-3.6) -- (-5,-6.45));
-      draw((15,-6.45) -- (10,-3.6) -- (5,-6.45));
-      
-      draw((12.5,-9.45) -- (15,-6.45) -- (17.5,-9.45));
-      draw((2.5,-9.45) -- (5,-6.45) -- (7.5,-9.45));
-      draw((-2.5,-9.45) -- (-5,-6.45) -- (-7.5,-9.45));
-      draw((-12.5,-9.45) -- (-15,-6.45) -- (-17.5,-9.45));
-      
-      label(scale(2) * "$\tfrac{1}{1}$", (0,0-.8)); 
-      label(scale(1.1) * "$t(1)$", (0,2.3-.3)); 
-      filldraw(circle((0,-.95), 2.1), green * .3 + white * .7);
-      
-      label(scale(1.4) * "$\tfrac{1}{2}$", (10,-3-.5));
-      label(scale(.9) * "$t(2)$", (10,-1.2-.15)); 
-      filldraw(circle((10,-3.6), 1.5), red * .3 + white * .7);
-      label(scale(1.4) * "$\tfrac{2}{1}$", (-10,-3-.5));
-      label(scale(.9) * "$t(3)$", (-10,-1.2-.15)); 
-      filldraw(circle((-10,-3.6), 1.5), red * .3 + white * .7);
-      
-      label(scale(1.1) * "$\tfrac{1}{3}$", (15,-6-.4)); 
-      label(scale(.75) * "$t(4)$", (15,-4.5-.15)); 
-      filldraw(circle((-15,-6.45), 1.2), blue * .3 + white * .7);
-      label(scale(1.1) * "$\tfrac{3}{2}$", (5,-6-.4)); 
-      label(scale(.75) * "$t(5)$", (5,-4.5-.15)); 
-      filldraw(circle((-5,-6.45), 1.2), blue * .3 + white * .7);
-      label(scale(1.1) * "$\tfrac{2}{3}$", (-5,-6-.4)); 
-      label(scale(.75) * "$t(6)$", (-5,-4.5-.15)); 
-      filldraw(circle((5,-6.45), 1.2), blue * .3 + white * .7);
-      label(scale(1.1) * "$\tfrac{3}{1}$", (-15,-6-.4)); 
-      label(scale(.75) * "$t(7)$", (-15,-4.5-.15)); 
-      filldraw(circle((15,-6.45), 1.2), blue * .3 + white * .7);
-      
-      label(scale(1.1) * "$\tfrac{1}{4}$", (17.5,-9-.3)); 
-      label(scale(.68) * "$t(8)$", (17.5,-7.5-.3)); 
-      filldraw(circle((17.5,-9.45), 1.15), yellow * .3 + white * .7);
-      label(scale(1.1) * "$\tfrac{4}{3}$", (12.5,-9-.3)); 
-      label(scale(.68) * "$t(9)$", (12.5,-7.5-.3)); 
-      filldraw(circle((12.5,-9.45), 1.15), yellow * .3 + white * .7);
-      label(scale(1.1) * "$\tfrac{3}{5}$", (7.5,-9-.3)); 
-      label(scale(.68) * "$t(10)$", (7.5,-7.5-.3)); 
-      filldraw(circle((7.5,-9.45), 1.15), yellow * .3 + white * .7);
-      label(scale(1.1) * "$\tfrac{5}{2}$", (2.5,-9-.3));
-      label(scale(.68) * "$t(11)$", (2.5,-7.5-.3)); 
-      filldraw(circle((2.5,-9.45), 1.15), yellow * .3 + white * .7);
-      label(scale(1.1) * "$\tfrac{2}{5}$", (-2.5,-9-.3)); 
-      label(scale(.68) * "$t(12)$", (-2.5,-7.5-.3)); 
-      filldraw(circle((-2.5,-9.45), 1.15), yellow * .3 + white * .7);
-      label(scale(1.1) * "$\tfrac{5}{3}$", (-7.5,-9-.3)); 
-      label(scale(.68) * "$t(13)$", (-7.5,-7.5-.3)); 
-      filldraw(circle((-7.5,-9.45), 1.15), yellow * .3 + white * .7);
-      label(scale(1.1) * "$\tfrac{3}{4}$", (-12.5,-9-.3)); 
-      label(scale(.68) * "$t(14)$", (-12.5,-7.5-.3)); 
-      filldraw(circle((-12.5,-9.45), 1.15), yellow * .3 + white * .7);
-      label(scale(1.1) * "$\tfrac{4}{1}$", (-17.5,-9-.3)); 
-      label(scale(.68) * "$t(15)$", (-17.5,-7.5-.3)); 
-      filldraw(circle((-17.5,-9.45), 1.15), yellow * .3 + white * .7);
-      \end{asy}
-      \end{center}
+        <div class="asy-container">
+        <script type="text/asy">
+          size(14cm);
+          
+          draw((-10,-3.6) -- (0,-.95) -- (10,-3.6));
+          draw((-15,-6.45) -- (-10,-3.6) -- (-5,-6.45));
+          draw((15,-6.45) -- (10,-3.6) -- (5,-6.45));
+          
+          draw((12.5,-9.45) -- (15,-6.45) -- (17.5,-9.45));
+          draw((2.5,-9.45) -- (5,-6.45) -- (7.5,-9.45));
+          draw((-2.5,-9.45) -- (-5,-6.45) -- (-7.5,-9.45));
+          draw((-12.5,-9.45) -- (-15,-6.45) -- (-17.5,-9.45));
+          
+          label(scale(2) * "$\tfrac{1}{1}$", (0,0-.8)); 
+          label(scale(1.1) * "$t(1)$", (0,2.3-.3)); 
+          filldraw(circle((0,-.95), 2.1), green * .3 + white * .7);
+          
+          label(scale(1.4) * "$\tfrac{1}{2}$", (10,-3-.5));
+          label(scale(.9) * "$t(2)$", (10,-1.2-.15)); 
+          filldraw(circle((10,-3.6), 1.5), red * .3 + white * .7);
+          label(scale(1.4) * "$\tfrac{2}{1}$", (-10,-3-.5));
+          label(scale(.9) * "$t(3)$", (-10,-1.2-.15)); 
+          filldraw(circle((-10,-3.6), 1.5), red * .3 + white * .7);
+          
+          label(scale(1.1) * "$\tfrac{1}{3}$", (15,-6-.4)); 
+          label(scale(.75) * "$t(4)$", (15,-4.5-.15)); 
+          filldraw(circle((-15,-6.45), 1.2), blue * .3 + white * .7);
+          label(scale(1.1) * "$\tfrac{3}{2}$", (5,-6-.4)); 
+          label(scale(.75) * "$t(5)$", (5,-4.5-.15)); 
+          filldraw(circle((-5,-6.45), 1.2), blue * .3 + white * .7);
+          label(scale(1.1) * "$\tfrac{2}{3}$", (-5,-6-.4)); 
+          label(scale(.75) * "$t(6)$", (-5,-4.5-.15)); 
+          filldraw(circle((5,-6.45), 1.2), blue * .3 + white * .7);
+          label(scale(1.1) * "$\tfrac{3}{1}$", (-15,-6-.4)); 
+          label(scale(.75) * "$t(7)$", (-15,-4.5-.15)); 
+          filldraw(circle((15,-6.45), 1.2), blue * .3 + white * .7);
+          
+          label(scale(1.1) * "$\tfrac{1}{4}$", (17.5,-9-.3)); 
+          label(scale(.68) * "$t(8)$", (17.5,-7.5-.3)); 
+          filldraw(circle((17.5,-9.45), 1.15), yellow * .3 + white * .7);
+          label(scale(1.1) * "$\tfrac{4}{3}$", (12.5,-9-.3)); 
+          label(scale(.68) * "$t(9)$", (12.5,-7.5-.3)); 
+          filldraw(circle((12.5,-9.45), 1.15), yellow * .3 + white * .7);
+          label(scale(1.1) * "$\tfrac{3}{5}$", (7.5,-9-.3)); 
+          label(scale(.68) * "$t(10)$", (7.5,-7.5-.3)); 
+          filldraw(circle((7.5,-9.45), 1.15), yellow * .3 + white * .7);
+          label(scale(1.1) * "$\tfrac{5}{2}$", (2.5,-9-.3));
+          label(scale(.68) * "$t(11)$", (2.5,-7.5-.3)); 
+          filldraw(circle((2.5,-9.45), 1.15), yellow * .3 + white * .7);
+          label(scale(1.1) * "$\tfrac{2}{5}$", (-2.5,-9-.3)); 
+          label(scale(.68) * "$t(12)$", (-2.5,-7.5-.3)); 
+          filldraw(circle((-2.5,-9.45), 1.15), yellow * .3 + white * .7);
+          label(scale(1.1) * "$\tfrac{5}{3}$", (-7.5,-9-.3)); 
+          label(scale(.68) * "$t(13)$", (-7.5,-7.5-.3)); 
+          filldraw(circle((-7.5,-9.45), 1.15), yellow * .3 + white * .7);
+          label(scale(1.1) * "$\tfrac{3}{4}$", (-12.5,-9-.3)); 
+          label(scale(.68) * "$t(14)$", (-12.5,-7.5-.3)); 
+          filldraw(circle((-12.5,-9.45), 1.15), yellow * .3 + white * .7);
+          label(scale(1.1) * "$\tfrac{4}{1}$", (-17.5,-9-.3)); 
+          label(scale(.68) * "$t(15)$", (-17.5,-7.5-.3)); 
+          filldraw(circle((-17.5,-9.45), 1.15), yellow * .3 + white * .7);
+        </script>
+        </div>
     </p>
 </body>
     
