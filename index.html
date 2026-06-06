@@ -3,6 +3,9 @@
     
 <head>
     <title>Mathematics - Fun Topics</title>
+    
+    <link rel="stylesheet" href="style.css">
+
     <script>
         window.MathJax = {
           tex: {
@@ -15,22 +18,9 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <style>
-        body {
-            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.7;
-            color: #2d3436;
-            background-color: #f8f9fa;
-            margin: 40px;
-            padding: 0;
-        }
-        
-        nav {
-            margin-bottom: 20px;
-        }
-
         h2 {
             color: #2d3436;
-            margin-top: 30px;
+            margin-top: 10px;
         }
 
         ul {
@@ -41,12 +31,12 @@
             margin-bottom: 12px;
         }
 
-        a {
+        .main-content a {
             color: #0984e3;
             text-decoration: none;
         }
 
-        a:hover {
+        .main-content a:hover {
             text-decoration: underline;
         }
         
@@ -62,43 +52,42 @@
     
 <body>
     <nav class="sidebar">
-    <div class="sidebar-logo">
-      <h2>My Website</h2>
-    </div>
-    <ul class="sidebar-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="groupsolve.html">Teaching</a></li>
-    </ul>
-  </nav>
-
-  <main class="main-content">
-
-    <h2><strong>Random topics</strong></h2>
-    
-    <p>
-        Here are a few various handouts I've written throughout the past few years. 
-        Usually, I write about things I find interesting, things I want to document, 
-        or things I need to prepare for some random event.
-    </p>
-
-    <ul>
-        <li>
-            <a href="affinet.pdf">Prefix Sums</a>: [description]
-        </li>
-        <li>
-            <a href="affinet.pdf">Affine Transformations</a>: [description]
-        </li>
-        <li>
-            <a href="philosgeo.pdf">Philosophy of Approaching Geometry</a>: [description]
-        </li>
-        <li>
-            <a href="storageunit.pdf">Storage Unit</a>: [description]
-        </li>
-    </ul>
-
-    <div class="footer">
+        <div class="sidebar-logo">
+            <h2>My Website</h2>
         </div>
-  </main>
+        <ul class="sidebar-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="groupsolve.html">Teaching</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <h2><strong>Random topics</strong></h2>
+        
+        <p>
+            Here are a few various handouts I've written throughout the past few years. 
+            Usually, I write about things I find interesting, things I want to document, 
+            or things I need to prepare for some random event.
+        </p>
+
+        <ul>
+            <li>
+                <a href="affinet.pdf">Prefix Sums</a>: [description]
+            </li>
+            <li>
+                <a href="affinet.pdf">Affine Transformations</a>: [description]
+            </li>
+            <li>
+                <a href="philosgeo.pdf">Philosophy of Approaching Geometry</a>: [description]
+            </li>
+            <li>
+                <a href="storageunit.pdf">Storage Unit</a>: [description]
+            </li>
+        </ul>
+
+        <div class="footer">
+            </div>
+    </main>
 </body>
     
 </html>
